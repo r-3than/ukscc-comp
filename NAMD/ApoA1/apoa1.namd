@@ -1,0 +1,60 @@
+# read atom positions from PDB
+coordinates         ../input_files/apoa1.pdb
+
+# read topology and per atom parameters from PSF
+structure            ../input_files/apoa1.psf
+
+# read X-PLOR force field parameters
+parameters           ../input_files/par_all22_prot_lipid.xplor
+parameters           ../input_files/par_all22_popc.xplor
+
+# velocities to satisfy initial temperature distribution
+temperature          300
+
+# random number generator seed
+seed                 74269
+
+# define cell dimensions for periodic boundary conditions
+cellBasisVector1     108.8612 0.0 0.0
+cellBasisVector2     0.0 108.8612 0.0
+cellBasisVector3     0.0 0.0 77.758
+cellOrigin           0.0 0.0 0.0
+
+# define cutoff distance for short-range non-bonded interactions
+switching            on
+switchdist           10
+cutoff               12
+
+# non-bonded exclusion policy and scaling
+exclude              scaled1-4
+1-4scaling           1.0
+
+# distance for pairlist generation
+pairlistdist         13.5
+
+# number of steps between atom migration
+stepspercycle        20
+
+# use particle-mesh Ewald for long-range electrostatics
+# reasonable accuracy requires about 1 A grid resolution
+PME                  on
+PMEGridSizeX         108
+PMEGridSizeY         108
+PMEGridSizeZ         80
+
+# constrain hydrogen atoms
+rigidbonds           all
+
+# rigid bond constraints permits 2 fs timestep
+# for bonds and short-range non-bonded interactions,
+# 4 fs timestep for PME long-range
+timestep             2.0
+fullElectFrequency   2
+
+# number of steps in simulation
+numsteps             10000
+
+# energy and timing outputs
+outputtiming         100
+
+outputname           stmv-apoa1.out
