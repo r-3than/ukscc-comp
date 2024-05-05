@@ -1,0 +1,24 @@
+Trying to achieve equal edge distribution across processes.
+
+-------------------------------------------------------
+Graph edge distribution characteristics
+-------------------------------------------------------
+Number of vertices: 3997962
+Number of edges: 69362378
+Maximum number of edges: 1085357
+Average number of edges: 1.08379e+06
+Expected value of X^2: 1.1746e+12
+Variance: 569559
+Standard deviation: 754.692
+-------------------------------------------------------
+Time to read input file and create distributed graph (in s): 0.709244
+-------------------------------------------------------
+File: ./com-LiveJournal.bin
+-------------------------------------------------------
+-------------------------------------------------------
+64-bit datatype
+-------------------------------------------------------
+Average total time (in s), #Processes: 40.5619, 64
+Modularity, #Iterations: 0.632623, 47
+MODS (final modularity * average time): 25.6604
+-------------------------------------------------------
